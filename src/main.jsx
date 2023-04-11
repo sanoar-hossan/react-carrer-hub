@@ -39,8 +39,9 @@ element: <Blog></Blog>,
   },
 
   {
-path:'appliedjobs',
+path:'jobs',
 element: <Appliedjobs></Appliedjobs>,
+loader:()=>fetch('/jobsinfo.json'),
   },
   {
 path:'statistics',

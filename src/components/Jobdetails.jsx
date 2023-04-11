@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { LocationMarkerIcon } from '@heroicons/react/solid';
 import { CurrencyDollarIcon } from '@heroicons/react/solid';
+import { addDB } from './utilities/fakeDB';
 
 const Jobdetails = () => {
     const [jobDetails, setJobDetails] = useState(null);
@@ -17,11 +18,10 @@ const Jobdetails = () => {
     fetchJobDetails();
   }, [id]);
 
-  const handleApplyNowClick = () => {
+  const handleApplyNowClick = (id) => {
     // Save jobDetails to local storage
-    localStorage.setItem('jobDetails', JSON.stringify(jobDetails));
-    // Display a success message or perform other actions
-    alert('Job details saved to local storage');
+    console.log(id)
+    addDB(id)
   };
 
   if (!jobDetails) {
@@ -55,7 +55,8 @@ const Jobdetails = () => {
         </div>
         <div className="job-card-title p-3 flex"><LocationMarkerIcon className="w-6 h-6 text-indigo-800" /> Address:{jobDetails.address}</div>
       </div>
-      <button className='bg-indigo-500 p-5 font-bold text-white w-full text-center mt-5 bg onClick={()=>handleApplyNowClick(id)}'>Apply Now</button>
+      
+      <button className='bg-indigo-500 p-5 font-bold text-white w-full text-center mt-5 bg' onClick={() => handleApplyNowClick(id)}>Apply Now</button>
      
 </div>
 
