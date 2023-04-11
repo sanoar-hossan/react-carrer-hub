@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Category from './Category';
+import Featured from './Featured';
 
 const Home = () => {
 
 const categorydata=useLoaderData();
 
+const [jobs,setjobs]=useState([]);
+useEffect(()=>{
+  fetch('jobsinfo.json')
+  .then(res=>res.json())
+  .then(data=>setjobs(data))
+},[])
+
 
 
     return (
-      <div>
-<div className="bg-content my-container flex flex-col items-center justify-between lg:flex-row">
+      <div >
+<div className="bg-content my-container flex flex-col items-center justify-between lg:flex-row mb-24">
 
 <div className="text-area">
 <h2 className=' text-gray-900 sm:text-4xl sm:leading-none'>
@@ -35,12 +43,24 @@ const categorydata=useLoaderData();
 
 </div>
 
-<div><h1>Job Category List</h1>
-            <p>Explore thousands of job opportunities with all the information you need. Its your future</p></div>
 
-<div>{categorydata.map((catdata) => (
+<div className='mt-20'><h1 className='text-center text-3xl mt-20  text-black font-bold'>Job Category List</h1>
+            <p className='text-center text-xl mt-5'>Explore thousands of job opportunities with all the information you need. Its your future</p></div>
+<div className='mt-20 my-container shadow-xl  grid grid-cols-4'>{categorydata.map((catdata) => (
     <Category key={catdata.id} catdata={catdata} />
   ))}</div>
+
+
+<div className='mt-20'><h1 className='text-center text-3xl mt-20  text-black font-bold'>Featured Jobs</h1>
+            <p className='text-center text-xl mt-5'>Explore thousands of job opportunities with all the information you need. Its your future</p></div>
+<div className='mt-20 my-container shadow-xl  grid grid-cols-2'>{jobs.map((jobdata) => (
+    <Featured key={jobdata.id} jobdata={jobdata} />
+  ))}</div>
+
+<button className='btn'>See All Jobs</button>
+
+
+
 
 
 

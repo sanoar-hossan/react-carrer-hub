@@ -1,8 +1,7 @@
-{
-    "jobs": [
+[
       {
         "id": "1001",
-        "company_logo": "https://example.com/company_logo_1.png",
+        "company_logo": "https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png",
         "job_title": "Web Developer",
         "company_name": "WebTech Solutions",
         "remote_or_onsite": "Remote",
@@ -20,7 +19,7 @@
       },
       {
         "id": "1002",
-        "company_logo": "https://example.com/company_logo_2.png",
+        "company_logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
         "job_title": "Data Analyst",
         "company_name": "DataWorks Inc.",
         "remote_or_onsite": "Onsite",
@@ -38,7 +37,7 @@
       },
       {
         "id": "1003",
-        "company_logo": "https://example.com/company_logo_3.png",
+        "company_logo": "https://logos-world.net/wp-content/uploads/2020/10/Tesla-Emblem.png",
         "job_title": "Content Writer",
         "company_name": "ContentMasters Inc.",
         "remote_or_onsite": "Remote",
@@ -56,7 +55,7 @@
       },
       {
         "id": "1004",
-        "company_logo": "https://example.com/company_logo_4.png",
+        "company_logo": "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png",
         "job_title": "Sales Representative",
         "company_name": "SalesForce Inc.",
         "remote_or_onsite": "Onsite",
@@ -74,7 +73,7 @@
 },
 {
 "id": "1005",
-"company_logo": "https://example.com/company_logo_5.png",
+"company_logo": "https://global-uploads.webflow.com/5e157548d6f7910beea4e2d6/6304a4144b96900853d82d9b_Twitter-Logo-2010.png",
 "job_title": "Graphic Designer",
 "company_name": "DesignWorks Inc.",
 "remote_or_onsite": "Onsite",
@@ -92,7 +91,7 @@
 },
 {
 "id": "1006",
-"company_logo": "https://example.com/company_logo_6.png",
+"company_logo": "https://logos-world.net/wp-content/uploads/2020/10/Tesla-Emblem.png",
 "job_title": "Human Resources Manager",
 "company_name": "HRWorks Inc.",
 "remote_or_onsite": "Onsite",
@@ -109,4 +108,3 @@
 }
 }
 ]
-}
