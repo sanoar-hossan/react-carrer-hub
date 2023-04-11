@@ -28,7 +28,9 @@ className='h-20 w-40'
     </div>
     
 </div>
-<button className='btn mt-10 snap-center'><Link to={`/jobdetails/$(id)`}> View Details </Link></button>
+<button className='btn mt-10 snap-center'>
+    <Link to={`/jobdetails/${jobdata.id}`}> View Details </Link>
+</button>
 
 
 

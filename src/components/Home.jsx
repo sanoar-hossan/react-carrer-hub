@@ -18,14 +18,14 @@ useEffect(()=>{
 
     return (
       <div >
-<div className="bg-content my-container flex flex-col items-center justify-between lg:flex-row mb-24">
+<div className=" my-container flex flex-col items-center justify-between lg:flex-row mb-24">
 
-<div className="text-area">
-<h2 className=' text-gray-900 sm:text-4xl sm:leading-none'>
+<div className="text-area leading-5">
+<h2 className=' text-gray-900 sm:text-4xl sm:leading-none  '>
     One Step <br></br> Closer To Your <br />
-      <span className=' text-blue-400'>Dream Job</span>
+      <span className=' text-blue-400 mb-5 '>Dream Job</span>
     </h2>
-    <p className='text-base text-gray-700 md:text-lg'>
+    <p className='text-base text-gray-700 md:text-lg pb-4'>
     Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.
     </p>
     <Link to='/jobs' className='btn md:w-auto md:mr-4'>
@@ -44,7 +44,7 @@ useEffect(()=>{
 </div>
 
 
-<div className='mt-20'><h1 className='text-center text-3xl mt-20  text-black font-bold'>Job Category List</h1>
+<div className='mt-40 pt-20 lg:pt-0'><h1 className='text-center text-3xl mt-40   text-black font-bold'>Job Category List</h1>
             <p className='text-center text-xl mt-5'>Explore thousands of job opportunities with all the information you need. Its your future</p></div>
 <div className='mt-20 my-container shadow-xl  grid grid-cols-4'>{categorydata.map((catdata) => (
     <Category key={catdata.id} catdata={catdata} />

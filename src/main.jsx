@@ -9,6 +9,7 @@ import Appliedjobs from './components/Appliedjobs'
 import Statistics from './components/Statistics'
 import ErrorPage from './Errorpage'
 import Category from './components/Category'
+import Jobdetails from './components/Jobdetails'
 
 const router=createBrowserRouter([{
 path:'/',
@@ -19,9 +20,19 @@ children: [
   {
 path:'/',
 element: <Home></Home>,
-loader:()=>fetch('category.json')
+loader:()=>fetch('/category.json')
   },
   
+  {
+    path: '/jobdetails/:id',
+    element: <Jobdetails></Jobdetails>,
+    loader: async ({ params }) => {
+        const res = await fetch('/jobsinfo.json');
+        const data = await res.json();
+        const singledata = data.find(job => job.id === params.id); 
+         return <Jobdetails jobDetails={singledata} />;;
+}
+  },
   {
 path:'blog',
 element: <Blog></Blog>,
