@@ -15,6 +15,14 @@ const Header = () => {
         <ul className='items-center hidden space-x-8 lg:flex'>
           <li>
             <NavLink
+              to='/'
+              
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to='/statistics'
               
             >
