@@ -9,16 +9,18 @@ const categorydata=useLoaderData();
 
 const [jobs,setjobs]=useState([]);
 const [showAllJobs, setShowAllJobs] = useState(false);
-const handleSeeAllJobsClick = () => {
-  setShowAllJobs(true);
-};
+
+
 useEffect(()=>{
   fetch('jobsinfo.json')
   .then(res=>res.json())
   .then(data=>setjobs(data))
 },[])
 
-
+ // Function to handle "See All Jobs" button click
+ const handleSeeAllJobsClick = () => {
+  setShowAllJobs(true);
+}
 
     return (
       <div >
@@ -54,24 +56,34 @@ useEffect(()=>{
     <Category key={catdata.id} catdata={catdata} />
   ))}</div>
 
-
-<div className='mt-20'><h1 className='text-center text-3xl mt-20  text-black font-bold'>Featured Jobs</h1>
-            <p className='text-center text-xl mt-5'>Explore thousands of job opportunities with all the information you need. Its your future</p></div>
-<div className='mt-20 my-container shadow-xl  grid grid-cols-2'>{jobs.map((jobdata) => (
-    <Featured key={jobdata.id} jobdata={jobdata} />
-  ))}
-  
-  
-  </div>
-
-    <div className=' text-center py-5  snap-center mx-auto'><button className='p-5 font-bold transition duration-150 ease-out text-white hover:bg-indigo-300 bg-indigo-500 '>See All Jobs</button></div>
-
+<div className='mt-20 my-container shadow-xl grid grid-cols-2'>
+        {jobs.slice(0, 4).map((jobdata) => (
+          <Featured key={jobdata.id} jobdata={jobdata} />
+        ))}
       </div>
-      
 
-      
-    
-    );
+      {/* Show the next two cards when "See All Jobs" button is clicked */}
+      {showAllJobs && (
+        <div className='mt-20 my-container shadow-xl grid grid-cols-2'>
+          {jobs.slice(4, 6).map((jobdata) => (
+            <Featured key={jobdata.id} jobdata={jobdata} />
+          ))}
+        </div>
+      )}
+
+      {/* Show the "See All Jobs" button if there are more than four jobs */}
+      {jobs.length > 4 && !showAllJobs && (
+        <div className='text-center py-5 snap-center mx-auto'>
+          <button
+            className='p-5 font-bold transition duration-150 ease-out text-white hover:bg-indigo-300 bg-indigo-500'
+            onClick={handleSeeAllJobsClick}
+          >
+            See All Jobs
+          </button>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Home;
