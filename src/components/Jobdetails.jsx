@@ -18,10 +18,10 @@ const Jobdetails = () => {
     fetchJobDetails();
   }, [id]);
 
-  const handleApplyNowClick = (id) => {
+  const handleApplyNowClick = (jobDetails) => {
     // Save jobDetails to local storage
-    console.log(id)
-    addDB(id)
+    
+    addDB(jobDetails)
   };
 
   if (!jobDetails) {
@@ -56,7 +56,7 @@ const Jobdetails = () => {
         <div className="job-card-title p-3 flex"><LocationMarkerIcon className="w-6 h-6 text-indigo-800" /> Address:{jobDetails.address}</div>
       </div>
       
-      <button className='bg-indigo-500 p-5 font-bold text-white w-full text-center mt-5 bg' onClick={() => handleApplyNowClick(id)}>Apply Now</button>
+      <button className='bg-indigo-500 p-5 font-bold text-white w-full text-center mt-5 bg' onClick={() => handleApplyNowClick(jobDetails)}>Apply Now</button>
      
 </div>
 

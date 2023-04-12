@@ -8,6 +8,10 @@ const Home = () => {
 const categorydata=useLoaderData();
 
 const [jobs,setjobs]=useState([]);
+const [showAllJobs, setShowAllJobs] = useState(false);
+const handleSeeAllJobsClick = () => {
+  setShowAllJobs(true);
+};
 useEffect(()=>{
   fetch('jobsinfo.json')
   .then(res=>res.json())
@@ -55,16 +59,15 @@ useEffect(()=>{
             <p className='text-center text-xl mt-5'>Explore thousands of job opportunities with all the information you need. Its your future</p></div>
 <div className='mt-20 my-container shadow-xl  grid grid-cols-2'>{jobs.map((jobdata) => (
     <Featured key={jobdata.id} jobdata={jobdata} />
-  ))}</div>
+  ))}
+  
+  
+  </div>
 
-<button className='btn'>See All Jobs</button>
-
-
-
-
-
+    <div className=' text-center py-5  snap-center mx-auto'><button className='p-5 font-bold transition duration-150 ease-out text-white hover:bg-indigo-300 bg-indigo-500 '>See All Jobs</button></div>
 
       </div>
+      
 
       
     

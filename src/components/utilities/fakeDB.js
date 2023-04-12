@@ -1,23 +1,23 @@
 
 {/*add local storage id*/}
-const addDB=id=>{
+const addDB=job=>{
+    
+    let jobsCart=[]
 
-    let jobsCart={}
-
-    const storedCart=localStorage.getItem('jobsCart')
+    const storedCart=localStorage.getItem('jobs-cart')
     if(storedCart){
-        const prevCart=JSON.parse(storedCart)
+         jobsCart=JSON.parse(storedCart)
     }
 
-    let quantity=jobsCart[id]
-     if(quantity){
-        quantity=quantity+1;
-        jobsCart.push=quantity;
-     }
-     else{
-        jobsCart[id]=1
-     }
-     
+    // let quantity=jobsCart[id]
+    //  if(quantity){
+    //     quantity=quantity+1;
+    //     jobsCart.push=quantity;
+    //  }
+    //  else{
+    //     jobsCart[id]=1
+    //  }
+     jobsCart.push(job)
      localStorage.setItem('jobs-cart', JSON.stringify(jobsCart));
 }
 
